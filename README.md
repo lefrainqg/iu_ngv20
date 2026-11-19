@@ -1,27 +1,38 @@
 # iu_ngv20
 
-Project generated with Angular CLI version 20.3.7.
+Plantilla de interfaz con **Angular 20**, renderizado en servidor (SSR) y **PrimeNG**.
+Incluye como ejemplo un componente de consulta de **malla curricular** que consume una API REST.
 
-## Development mode
+## Stack
 
-Install dependencies
+- Angular 20 (componentes standalone, signals, `resource`)
+- Angular SSR + Express
+- PrimeNG 20
+- Gestor de paquetes: pnpm
 
-```bash
-npm install
+## Estructura
+
+```
+src/app/
+├── components/   # Componentes (mcu-malla-curricular)
+├── services/     # Servicios HTTP (plan de estudio)
+└── shared/       # Endpoints y modelos
 ```
 
-Run:
+## Configuración
+
+Define la URL de la API en `src/environments/environment.ts` (`PATH_API_CDA`).
+
+## Desarrollo
 
 ```bash
-ng serve
+pnpm install
+pnpm start          # http://localhost:4200
 ```
 
-## Building
-
-To build the project run:
+## Build y SSR
 
 ```bash
-ng build
+pnpm build
+pnpm serve:ssr:v20iu
 ```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
